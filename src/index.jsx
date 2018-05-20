@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import { observable, action, autorun } from 'mobx';
 import { observer } from 'mobx-react';
+import Button from './components/Button';
 
 var appState = observable({
   timer: 0
@@ -33,6 +34,9 @@ class TimerView extends React.Component {
 };
 
 ReactDOM.render(
-  <TimerView appState={appState} />,
+  <div>
+    <TimerView appState={appState} />
+    <Button title='按钮' />
+  </div>,
   document.getElementById('app')
 );
